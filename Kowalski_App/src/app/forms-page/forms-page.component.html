@@ -1,0 +1,67 @@
+
+<div class="main-container">
+<div class="feedback-container">
+    <h2>Thank you for choosing to give feedback!</h2>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="radio-group">
+        <label>Have you enjoyed your experience using this application?</label>
+        
+        <input type="radio" id="yes" name="experience" formControlName="experience" value="yes">
+        <label for="yes">Yes</label>
+  
+        <input type="radio" id="partially" name="experience" formControlName="experience" value="partially">
+        <label for="partially">Partially</label>
+  
+        <input type="radio" id="no" name="experience" formControlName="experience" value="no">
+        <label for="no">No</label>
+      </div>
+      <div class="nameContainer">
+        <div class="input-group"></div>
+      <div class="input-group">
+    
+        <label for="FirstName">First Name*</label>
+        <input type="text" id="FirstName" formControlName="firstName">
+      </div>
+      <div class="input-group">
+       
+        <label for="LastName">Last Name*</label>
+        <input type="text" id="LastName" formControlName="lastName">
+
+      </div>
+      <div class="input-group"></div>
+    </div>
+    <label for="email">Email Address*</label>
+      <div class="input-group">
+
+        <input type="email" id="email" formControlName="email">
+      </div>
+      <label for="feedback">Feedback*</label>
+      <div class="input-group">
+
+        <textarea id="feedback" formControlName="feedback"></textarea>
+      </div>
+      <div class="fileUpload">
+      <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+      </div>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+    <div class="progressBar">
+      <span class="dot" [class.completed]="isSubmitted" id="dot1"></span>
+    <span class="dot" id="dot2"></span>
+    <span class="dot" id="dot3"></span>
+    <hr>
+
+</div>
+<div class="progressBarText">
+
+  <span class="text" id="text2">2. Feedback Received</span>
+  <span class="text" id="text3">3. We are working on it</span>
+  <span class="text" id="text4">4. Implemented</span>
+</div>
+      </div>
+
+
+
+
+</div>
